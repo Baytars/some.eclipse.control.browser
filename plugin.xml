@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+   <extension
+         point="org.eclipse.ui.views">
+      <category
+            name="SoMe"
+            id="some.eclipse.control.browser">
+      </category>
+      <view
+            name="SoMe Control Panel"
+            inject="true"
+            icon="icons/sample.png"
+            category="some.eclipse.control.browser"
+            class="some.eclipse.control.browser.views.SoMeControlView"
+            id="some.eclipse.control.browser.views.SoMeControlView">
+      </view>
+   </extension>
+   <extension
+         point="org.eclipse.ui.perspectiveExtensions">
+      <perspectiveExtension
+            targetID="org.eclipse.jdt.ui.JavaPerspective">
+         <view
+               ratio="0.5"
+               relative="org.eclipse.ui.views.ProblemView"
+               relationship="right"
+               id="some.eclipse.control.browser.views.SoMeControlView">
+         </view>
+      </perspectiveExtension>
+   </extension>
+   <extension
+         point="org.eclipse.help.contexts">
+      <contexts
+            file="contexts.xml">
+      </contexts>
+   </extension>
+
+</plugin>
